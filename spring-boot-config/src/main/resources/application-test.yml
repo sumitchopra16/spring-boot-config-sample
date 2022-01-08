@@ -1,0 +1,21 @@
+#use only spaces to indent in yml. You can use 1 space indent or multiple space indent. But never use tab.
+
+app:
+  name: my app
+  description: description for ${app.name}
+  #you can refer other properties within a property value
+
+
+#csv list will be considered as list and can be used for LIST, ARRAY types
+number.list: One,Two,Three
+
+#key value pairs for properties of type map
+KeyValues: {test:'1', rest:'2', game:'3'}
+
+#properties mapped with a bean
+db:
+  username: root1
+  password: root1
+  url:
+
+management.endpoints.web.exposure.include: "*"

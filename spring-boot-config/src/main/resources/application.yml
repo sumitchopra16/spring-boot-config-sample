@@ -1,0 +1,31 @@
+#use only spaces to indent in yml. You can use 1 space indent or multiple space indent. But never use tab.
+
+app:
+    name: my app
+    description: description for ${app.name}
+#you can refer other properties within a property value
+
+  
+#csv list will be considered as list and can be used for LIST, ARRAY types
+number.list: One,Two,Three
+  
+#key value pairs for properties of type map
+KeyValues: {test:'1', rest:'2', game:'3'}
+  
+#properties mapped with a bean
+db:
+ username: root
+ password: root
+ url:
+
+management.endpoints.web.exposure.include: "*"
+
+
+# default profile ie application.yml or application.properties is always active, so this property will always be read.
+# property files corresponding to other profiles will override this one.
+
+# you can also chose bean according to the spring profile by specifying @Profile("test") annotation on a bean.
+# if no @Profile annotation is there then by default it is @Profile("default")
+spring.profiles.active: test
+
+spring.cloud.config.uri: http://localhost:8888
